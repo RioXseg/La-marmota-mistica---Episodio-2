@@ -1,0 +1,269 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define j = Character("Jesucristo")
+define m = Character("Marcelo")
+define d = Character("Dante")
+define narrator = Character(what_italic=True,what_xalign=0.5,what_textalign=0.5)
+define void = Character(window_background=None)
+
+#Effect to use in transitions
+define flashbulb = Fade(0.2,0.0,0.8,color='#fff')
+
+#Function to show a text in the middle of the screen
+screen text_midle(texto):
+    frame:
+        xalign 0.5 yalign 0.5
+        text texto:
+            size 30
+
+# The game starts here.
+label start:
+
+    play music "mistery.mp3" fadeout 1  
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene bg divinas_comedias
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show marcelo idle at left
+    show marmota mad at right:
+        yalign 2.5
+    
+    # These display lines of dialogue.
+    
+    j "¿Creías que Jesucristo era una buena persona?"
+    j "¡Jesucristo es de la Policía de Investigaciones!{p=0.5}¡Cagaste culiao!{p=0.5}¡Soy de la PDI!"
+    j "¡Quedaste arrestado por contrabando y compra de transgénicos ilegales!"
+    
+    show marcelo sad
+    
+    m "{size=+15}¡NOOOOOOOOOOOOOO!{size=-15}"
+    
+    show marmota xd
+    
+    j "Ajajajaj y el weon se la cree ajajajaj."
+    j "Solo te tendí una trampa para transformarte en Dante Allighieri."
+    
+    show marcelo idle
+    
+    m "Ah, de pana igual."
+    
+    show marmota idle
+    
+    j "Si, ser Allighieri es entrete."
+    
+    hide marcelo with flashbulb
+    show dante think at left with flashbulb
+    
+    d "Oye wacho, hijo del pulento."
+    d "¿Por que me convertiste en Dante Alighieri?"
+    
+    show marmota idle
+    
+    j "Es simple.{p=1}El mundo te necesita."
+    
+    show dante idle
+    
+    d "Dime una razón concreta."
+    
+    j "Hay muchos niños con down en la población Filomena de Puente Alto."
+    
+    show dante question    
+    
+    d "Pero el sindrome de Down no se puede curar."
+    
+    narrator "{cps=30}Dijo Dante con un tono de Stuart Little y de forma bastante maraca.{/cps}"
+    
+    d "No hay sentido en enviarme a Puente Alto."
+    
+    narrator "{cps=30}Jesucristo se rió de forma bastante religiosa.{/cps}"
+    
+    show marmota xd
+    
+    j "Ajajajajaja "
+    j "¿Creias que los niños con sindrome de Down eran humanos?{p=0.3}Eso es lo que Mario Kreutzberger nos hace creer."
+    
+    show dante sad
+    
+    d "¿Era todo una conspiración!?{p=0.75}Entonces..."
+    
+    show marmota mad
+    
+    j "Los niños con sindrome son hijos de Martín Cárcamo, el emperador del santanismo."
+    
+    show dante think
+    
+    d "Quisiste decir \"Satanismo\"."
+
+    j "Puta el weon enfermo, mejor hubiera transformado a Choche007."
+
+    narrator "{cps=30}Dante apuntando a Jesucristo dijo...{/cps}"
+
+    show dante mad
+
+    d "¡Eso es una falta de respeto!"
+
+    show dante idle
+
+    j "Santanismo es la religión que profesa los hitos del viejito Pascuero durante la Tercera Guerra Mundial."
+    
+    narrator "{cps=30}Repentinamente Jesucristo comenzó a bailar Caramelldansen.{/cps}"
+    
+    play music "caramell.mp3" fadeout 1
+    
+    show marmota uwu:
+        linear 1.0 xalign  .95
+        linear 1.0 xalign .8
+        repeat
+    
+    j "Martín Cárcamo quiere volver esa creencia una forma de gobierno usando a los niños con síndrome como mensajeros del hombre que vive en el polo norte."
+    
+    show dante xd
+    
+    d "Ahhh que soy weón."
+    
+    show marmota mad:
+        linear 1.0 xalign  .95
+        linear 1.0 xalign .8
+        repeat
+    
+    j "Ahora, hijo mio, debes matar a todos los niños Down del mundo, destruyendo sus cerebros y violando sus cadáveres para evitar la mutación de otros seres."
+    j "Pero primero... llévate estas pastillas abortivas, si las usas de forma inteligente podrás evitar la reproducción de más enfermos mentales."
+   
+    show screen text_midle("Has adquirido Pastillas Abortivas")
+    with dissolve
+    pause
+    hide screen text_midle
+    with dissolve
+ 
+    show dante idle
+    
+    d "Adios."
+    
+    hide dante with moveoutleft
+    stop music
+    
+    play music "desert.mp3" fadeout 1
+    
+    show bg filomena1
+    hide marmota
+    with fade
+    
+    narrator "{cps=30}Dante partió hacia la población de la Filomena con su escopeta recortada y su leche de pato lista para ser derramada sobre el recto de los niños Down para evitar la posterior necrofilia.{/cps}"
+    narrator "{cps=30}Al llegar a la población divisó 1000 niños down muertos y ya violados.{/cps}"
+    
+    show dante mad with moveinleft
+    
+    d "¡¿que chucha?!"
+    d "¿Quien cresta terminó mi trabajo antes que yo?"
+    
+    narrator "{cps=30}Caminando por las calles, Dante observó que los esfínteres de todos los niños estaban llenos de leche de pato y el cerebro de todos ya estaba totalmente destruido.{/cps}"
+    
+    show dante idle at left
+    show marmota idle at right:
+        yalign 2.5
+    show bg filomena2
+    with slideleft
+    
+    pause 1
+    
+    hide marmota
+    hide dante
+    
+    show bg filomena1
+    show dante mad
+    with slideright
+
+    d "Oh, jesucristo llego antes que yo."
+    d "¿Pero con quien cresta está hablando?"
+
+    show dante uwu at left
+    show marmota xd at right:
+        yalign 2.5
+    show bg filomena2
+    with slideleft
+    
+    pause 1    
+    
+    hide marmota
+    hide dante
+    
+    show bg filomena1
+    show dante mad
+    with slideright
+
+    show dante question
+
+    d "¿Por qué esa persona esta vestida igual que yo?"
+
+    hide dante with moveoutright
+    
+    show bg filomena2
+    with slideleft
+    
+    show dante question with moveinleft
+    
+    d "Un momento.{p}{nw}"
+       
+    show dante think 
+       
+    d "Esas expresiones {p}Ese olor a homosexual"
+    d "Esa leche."
+    
+    d "{cps=20}Esa persona.{p=1}{nw}{/cps}"
+    show dante mad
+    extend "{cps=20}Soy yo{/cps}"
+    
+    # This ends the game.
+    call credits
+    return
+
+label credits:
+    $ credits_speed = 25 #scrolling speed in seconds
+    scene black #replace this with a fancy background
+    with dissolve
+    pause 1.5
+    show theend:
+        yanchor 0.5 ypos 0.5
+        xanchor 0.5 xpos 0.5
+    with dissolve
+    with Pause(3)
+    hide theend
+    with dissolve
+    show cred at Move((0.5, 5.0), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
+    with Pause(credits_speed)
+    show thanks:
+        yanchor 0.5 ypos 0.5
+        xanchor 0.5 xpos 0.5
+    with dissolve
+    with Pause(3)
+    hide thanks
+    with dissolve
+    return
+    
+    
+init python:
+    credits = ('Backgrounds', 'Someone in internet'), ('Sprites', 'Sergio Álvarez'), ('Writing', 'Felix Cerda'), ('Programming', 'Sergio Álvarez'), ('Music', 'Some games')
+    credits_s = "{size=80}Credits\n\n"
+    c1 = ''
+    for c in credits:
+        if not c1==c[0]:
+            credits_s += "\n{size=40}" + c[0] + "\n"
+        credits_s += "{size=60}" + c[1] + "\n"
+        c1=c[0]
+    credits_s += "\n{size=40}Engine\n{size=60}Ren'py\n6.99.132919." #Don't forget to set this to your Ren'py version
+    
+init:
+#    image cred = Text(credits_s, font="myfont.ttf", text_align=0.5) #use this if you want to use special fonts
+    image cred = Text(credits_s, text_align=0.5)
+    image theend = Text("{size=80}{i}The end{/i}", text_align=0.5)
+    image thanks = Text("{size=80}{i}Thanks for Playing!{/i}", text_align=0.5)
